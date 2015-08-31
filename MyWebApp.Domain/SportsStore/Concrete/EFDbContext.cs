@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyWebApp.Domain.SportsStore.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.Domain.SportsStore.Concrete
 {
-    public class EFDbContext: DbContext
+    public class EFDbContext : DbContext
     {
-
+        public DbSet<Product> Products { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace MyWebApp.Domain.SportsStore.Concrete
     public class EFProductRepository : IProductRepository
 
     {
+        private EFDbContext context = new EFDbContext();
         public EFProductRepository()
         {
 
@@ -19,14 +20,7 @@ namespace MyWebApp.Domain.SportsStore.Concrete
         {
             get
             {
-                IEnumerable<Product> Products = new List<Product> {
-new Product { Name = "Football", Price = 25 },
-new Product { Name = "Surf board", Price = 179 },
-new Product { Name = "Running shoes", Price = 95 }
-};
-
-                return Products;
-
+                return context.Products;
             }
         }
     }
